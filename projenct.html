@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head lang="en">
+<title>Numbers calculation</title>
+<link href="css.css" rel="stylesheet">
+
+
+
+</head>
+<body style="background-color: rgb(88, 172, 171)">
+
+  <div class="container">
+    <h2 style="color:#3a3a3a; margin-left: 60% ;padding-bottom:0%; margin-top:0%;padding:0px; font-size:40px; font-weight: bold;">Marks calculator</h2>
+    <div class="mainhold">
+      <form action="#">
+           <div class="row">
+          <div class="c1" style="text-align:center;">
+            <p style="color:white;padding-top: 30px;">
+              <label style="font-size:25px;">Computer</label><br>
+              <input type="number" placeholder="computer marks" style="height: 35px; width: 300px;border-radius: 10px; font-family:cursive;" id="computer">
+            </p >
+            <p style="color:white">
+              <label style="font-size:25px;">Math</label><br>
+              <input type="text" placeholder="Math marks" style="height: 35px; width: 300px;border-radius: 10px; font-family:cursive;" id="Math">
+            </p>
+            <p style="color:white">
+              <label style="font-size:25px;">electronics</label><br>
+              <input type="number" placeholder="electronics marks" style="height: 35px; width: 300px;border-radius: 10px; font-family:cursive;" id="electronics">
+            </P>
+            <p style="color:white">
+              <label style="font-size:25px;">Biology</label><br>
+              <input type="number" placeholder="biology marks" style="height: 35px; width: 300px; border-radius: 10px; font-family:cursive;" id="biology">
+            </p><br>
+          </div>
+          <button value="showpercentage" style="background-color: rgb(88, 172, 171); border-radius: 8px; height: 40px; width: 500px; color:#3a3a3a ; margin-left:24%;" onclick="calculate()" class="button"> Calculate </button>
+        
+            <div style="text-align:center;color:white; font-family:cursive;" class="result">
+             <p id ="result"></p>           
+            </div> 
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const calculate=()=>{
+    let comp=document.getElementById("computer").value;
+    let maths=document.getElementById("Math").value;
+    let elec=document.getElementById("electronics").value;
+    let bio=document.getElementById("biology").value;
+    let grades="";
+
+   let total=parseFloat(comp)+parseFloat(maths)+parseFloat(elec)+parseFloat(bio);
+   let percentage=(total/400)*100;
+    
+   if(percentage <= 100 && percentage >= 80){
+     grades='A';
+   }else if(percentage <= 79 && percentage >=60){
+     grades='B';
+   }else if(percentage <=59 && percentage >=40){
+     grades='C'
+   }else{
+     grades='F';
+   }
+
+   if(percentage>=39.5){
+    document.getElementById('result').innerHTML=`Out of 400 scores, you secured ${total}. your percentage is ${percentage} and 
+  your grade is ${grades}.<br> CONGRATILATIONS! you are pass.`
+  }else{
+    document.getElementById('result').innerHTML=`Out of 400 scores, you secured ${total}. your percentage is ${percentage} and 
+  your grade is ${grades}.<br>SORRY! you are Fail. `
+  }
+  }
+
+  </script>   
+
+</body>
+</html>

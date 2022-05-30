@@ -1,0 +1,40 @@
+.container{
+    box-sizing:border-box;
+    width:1000px;
+    height:500px;
+   ;
+}
+.main{
+    text-align:center;
+}
+#id1{
+    text-align:center;
+}
+.div1{
+    height: 40px;
+}
+.button:active{
+    background-color: red;
+}
+
+.button:hover {
+    background-color: #3e8e41;
+    transition: 0.7s;
+}
+
+.mainhold{
+    width: 950px;
+    height: 580px;
+    background-color:#3a3a3a;
+    justify-items:center;
+    box-shadow: #D1D1D1;
+    border-radius:5px;
+    padding-top:30px;
+    padding-bottom:12px;
+    margin:auto;
+    margin-top: 20px;
+    margin-left: 280px;
+}
+.c1{
+    font-family:cursive;
+}
